@@ -77,11 +77,11 @@ Our best performing model ended up being the XG Boost model with tuned hyperpara
 XG Boost was our top performing model, although Random Forests was not far behind.  The poor performance of the K Nearest Neighbors, Decision Tree, and Logistic Regression models indicate that the data is not easily separable.  Our XG Boost model performs with an 81.61% testing accuracy.  The XG Boost model also boasted the highest AUC scores at 90.5%.
 
 Based on my findings, I am confident to partner with the Tanzanian government to help solve their water crisis by predicting water pump failure. As we illustrated above, there is a high rate of non functional waterpoints in the southeast corner of Tanzania in Mtwara and Lindi, as well as up north in Mara, and the southwest in Rukwa. These areas need immediate attention as the situations here are critical.   <br />
-<img src = "./images/region_function.png" width=70%> <br />
+<img src = "./images/region_function.jpeg" width=70%> <br />
 There are a high number of functional wells in Iringa, Shinyanga, Kilimanjaro, and Arusha. There is a cluster of functional but need repair waterpoints in Kigoma, these should be addressed to prevent failure which can be more expensive to repair. <br />
 <img src = "./images/map_function.png" width=70%> <br />
 Several of our models showed one of it's most important features to be quantity enough for the waterpoint.  There are over 8,000 waterpoints that have enough water in them but are non functional.  These are a high priority to address as well since there is water present. <br />
-<img src = "./images/quantity_function.png" width=70%> <br />
+<img src = "./images/quantity_function.jpeg" width=70%> <br />
 
 ## For More Information
 
