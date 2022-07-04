@@ -40,41 +40,41 @@ The dataset used for this analysis can be found [here](./data/training_set_value
 
 ## Modeling
 
-1. Dummy Classifier Model<br />
+1. Dummy Classifier Model <br />
 
 <img src = "./images/dummy_cm.png" width=40%> <br />
-Our baseline dummy model performed very poorly with an accuracy score of 46%. Our data is heavily imbalanced, which explains how our ternary model performed close to 50%.
+Our baseline dummy model performed very poorly with an accuracy score of 46%. Our data is heavily imbalanced, which explains how our ternary model performed close to 50%.<br />
     
-2. Logistic Regression Model<br />
+2. Logistic Regression Model <br />
 
 <img src = "./images/log_cm.png" width=40%> <br />
-Our logistic regression model is improved to 75% accuracy over the dummy model.  This model struggled to predict wells that were functional but needed repairs, likely due to class imbalances.
+Our logistic regression model is improved to 75% accuracy over the dummy model.  This model struggled to predict wells that were functional but needed repairs, likely due to class imbalances. <br />
     
-3. K Nearest Neighbors Model<br />
+3. K Nearest Neighbors Model <br />
 
 <img src = "./images/knn_cm.png" width=40%> <br />
-The K Nearest Neighbors model outperformed the Logistic Regression model.  Number of neighbors was hypertuned by running and GridSearch and optimal parameters were put into our pipe.  Our K Nearest Neighbors model is not overfitting as the accuracy of training and test sets are 80.23% and 76.03%, respectively.
+The K Nearest Neighbors model outperformed the Logistic Regression model.  Number of neighbors was hypertuned by running and GridSearch and optimal parameters were put into our pipe.  Our K Nearest Neighbors model is not overfitting as the accuracy of training and test sets are 80.23% and 76.03%, respectively.<br />
 
-4. Decision Tree Model<br />
+4. Decision Tree Model <br />
 
 <img src = "./images/dt_cm.png" width=40%> <br />
-Our decision tree model once again improved our test accuracy scores to 78%, but the model is highly overfitting with training accuracy at 89%.
+Our decision tree model once again improved our test accuracy scores to 78%, but the model is highly overfitting with training accuracy at 89%.<br />
     
-5. Random Forests Model<br />
+5. Random Forests Model <br />
 
 <img src = "./images/rf_cm.png" width=40%> <br />
-Upon running GridSearch with our Random Forests Pipeline, we improved our baseline accuracy to 81.34% testing accuracy.  The model is still overfitting the training data, as the training accuracy is 93.19%.  The RF model also had the 2nd highest AUC scores at 89.9%.
+Upon running GridSearch with our Random Forests Pipeline, we improved our baseline accuracy to 81.22% testing accuracy.  The model is still overfitting the training data, as the training accuracy is 93.35%.  The RF model also had the 2nd highest AUC scores at 89.9%. <br />
 <img src = "./images/roc_rf.png" width=50%> <br />
     
-6. XG Boost Model<br />
+6. XG Boost Model <br />
 
 <img src = "./images/xgb_cm.png" width=50%> <br />
-Our best performing model ended up being the XG Boost model with tuned hyperparameters, although the random forests model was not far behind with 80.94% testing accuracy.  The model has overfitted the training data, but the testing accuracy is overperforming any other model at 81.78%.  The XG Boost model also boasted the highest AUC scores at 90.45%
+Our best performing model ended up being the XG Boost model with tuned hyperparameters, although the random forests model was not far behind with 81.22% testing accuracy.  The model has overfitted the training data, but the testing accuracy is overperforming any other model at 81.61%.  The XG Boost model also boasted the highest AUC scores at 90.5%. <br />
 <img src = "./images/roc_xgb.png" width=50%> <br />
 
 ## Conclusions
 
-XG Boost was our top performing model, although Random Forests was not far behind.  The poor performance of the K Nearest Neighbors, Decision Tree, and Logistic Regression models indicate that the data is not easily separable.  Our XG Boost model performs with an 81.78% testing accuracy.  The XG Boost model also boasted the highest AUC scores at 90.45%.
+XG Boost was our top performing model, although Random Forests was not far behind.  The poor performance of the K Nearest Neighbors, Decision Tree, and Logistic Regression models indicate that the data is not easily separable.  Our XG Boost model performs with an 81.61% testing accuracy.  The XG Boost model also boasted the highest AUC scores at 90.5%.
 
 Based on my findings, I am confident to partner with the Tanzanian government to help solve their water crisis by predicting water pump failure. As we illustrated above, there is a high rate of non functional waterpoints in the southeast corner of Tanzania in Mtwara and Lindi, as well as up north in Mara, and the southwest in Rukwa. These areas need immediate attention as the situations here are critical.   <br />
 <img src = "./images/region_function.png" width=70%> <br />
