@@ -24,11 +24,12 @@ Tanzania is a developing country that struggles to get clean water to its popula
 * source_type - The source of the water
 * waterpoint_type - The kind of waterpoint
 
-The first sections focus on investigating, cleaning, wrangling, and reducing dimensionality for modeling. The next section contains 6 different classification models and evaluation of each, ultimately leading to us to select our best model for predicting waterpoint status based on the accuracy of the model. Finally, I will make recommendations to the Tanzanian Government and provide insight on predicting the status of waterpoints.
+The first sections focus on investigating, cleaning, wrangling, and reducing dimensionality for modeling. The next section contains 6 different classification models and evaluation of each, ultimately leading to us to select our best model for predicting waterpoint status based on the precision of the functional wells in the model. Finally, I will make recommendations to the Tanzanian Government and provide insight on predicting the status of waterpoints.
 
 ## Business Problem
 
-Tanzania is a developing country that struggles to provide it's 59 million people with access to clean drinking water.  DrivenData has started a competition to help officials predict statuses of waterpoints by building a model to predict which pumps are functional, functional but need repair, and non functional.  The data is provided by Taarifa and the Tanzanian Ministry of Water with the hope that the information provided by each waterpoint can aid understanding in which waterpoints will fail to improve the government's maintenance operations and ensure that it's residents have access to safe drinking water. 
+The Tanzanian government has a severe water crisis on their hands as a result of the vast number of non functional wells and they have asked for help. They want to be able to predict the statuses of which pumps are functional, functional but need repair, and non functional in order to improve their maintenance operations and ensure that it's residents have access to safe drinking water.  The data has been collected by and is provided by Taarifa and the Tanzanian Ministry of Water with the hope that the information provided by each waterpoint can aid understanding in which waterpoints will fail.
+I have partnered with the Tanzanian government to build a classification model to predict the status of the waterpoints using the dataset provided. I will use the precision of the functional wells as my main metric for model selection, as a non functional well being predicted as a functional well would be more detrimental to their case, but I will provide and discuss several metrics for each model.
 
 ## Data Understanding
 
@@ -48,33 +49,33 @@ Our baseline dummy model performed very poorly with an accuracy score of 46%. Ou
 2. Logistic Regression Model <br />
 
 <img src = "./images/log_cm.png" width=40%> <br />
-Our logistic regression model is improved to 75% accuracy over the dummy model.  This model struggled to predict wells that were functional but needed repairs, likely due to class imbalances. <br />
+Our logistic regression model is improved to 75% accuracy over the dummy model. This model struggled to predict wells that were functional but needed repairs, likely due to class imbalances. The precision of the functional class is 73%. <br />
     
 3. K Nearest Neighbors Model <br />
 
 <img src = "./images/knn_cm.png" width=40%> <br />
-The K Nearest Neighbors model outperformed the Logistic Regression model.  Number of neighbors was hypertuned by running and GridSearch and optimal parameters were put into our pipe.  Our K Nearest Neighbors model is not overfitting as the accuracy of training and test sets are 80.23% and 76.03%, respectively.<br />
+The K Nearest Neighbors model outperformed the Logistic Regression model. Number of neighbors was hypertuned by running and GridSearch and optimal parameters were put into our pipe. Our K Nearest Neighbors model is not overfitting as the accuracy of training and test sets are 80.23% and 76.03%, respectively. The precision of the functional class is 77%, which is a huge improvement from our Logistic Regression model at 73%.<br />
 
 4. Decision Tree Model <br />
 
 <img src = "./images/dt_cm.png" width=40%> <br />
-Our decision tree model once again improved our test accuracy scores to 78%, but the model is highly overfitting with training accuracy at 89%.<br />
+Our decision tree model once again improved our functional class precision scores to 79%, but the model is highly overfitting with training accuracy at 89% and test accuracy at 78%.<br />
     
 5. Random Forests Model <br />
 
 <img src = "./images/rf_cm.png" width=40%> <br />
-Upon running GridSearch with our Random Forests Pipeline, we improved our baseline accuracy to 81.22% testing accuracy.  The model is still overfitting the training data, as the training accuracy is 93.35%.  The RF model also had the 2nd highest AUC scores at 89.9%. <br />
+Upon running GridSearch with our Random Forests Pipeline, we have once again improved from our baseline accuracy to 80% precision for the functional class over the Decision Tree model at 79%. The model is still overfitting the training data, as the training accuracy is 93.5% and the test accuracy is 81.4%, but this is our best performing model so far. <br />
 <img src = "./images/roc_rf.png" width=50%> <br />
     
 6. XG Boost Model <br />
 
 <img src = "./images/xgb_cm.png" width=50%> <br />
-Our best performing model ended up being the XG Boost model with tuned hyperparameters, although the random forests model was not far behind with 81.22% testing accuracy.  The model has overfitted the training data, but the testing accuracy is overperforming any other model at 81.61%.  The XG Boost model also boasted the highest AUC scores at 90.5%. <br />
+Our best performing model ended up being the XG Boost model with tuned hyperparameters, although the random forests model was not far behind with 80% precision for the functional wells class. The model has overfitted the training data with a training accuracy of 92.57% and test accuracy at 81.73%, but this model boasted the highest precision score for the functional wells class at 81%. <br />
 <img src = "./images/roc_xgb.png" width=50%> <br />
 
 ## Conclusions
 
-XG Boost was our top performing model, although Random Forests was not far behind.  The poor performance of the K Nearest Neighbors, Decision Tree, and Logistic Regression models indicate that the data is not easily separable.  Our XG Boost model performs with an 81.61% testing accuracy.  The XG Boost model also boasted the highest AUC scores at 90.5%.
+XG Boost was our top performing model, although Random Forests was not far behind.  The poor performance of the K Nearest Neighbors, Decision Tree, and Logistic Regression models indicate that the data is not easily separable.  Our XG Boost model performs with an 81.73% testing accuracy and precision for the functional class at 81%. It also had the highest f1 score of any model at 81% and the highest AUC scores at 90.5%.
 
 Based on my findings, I am confident to partner with the Tanzanian government to help solve their water crisis by predicting water pump failure. As we illustrated above, there is a high rate of non functional waterpoints in the southeast corner of Tanzania in Mtwara and Lindi, as well as up north in Mara, and the southwest in Rukwa. These areas need immediate attention as the situations here are critical.   <br />
 <img src = "./images/region_function.jpeg" width=70%> <br />
