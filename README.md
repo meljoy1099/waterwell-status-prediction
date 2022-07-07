@@ -92,7 +92,8 @@ Wells with no fees are more likely to be non functional. Payment provides incent
 The Government, District Council, and Fini Water all have a high rate of pump failure. Investigate why these installers have such a high rate of failure or use other installers. <br />
 <img src = "./images/installer_function.jpeg" width=70%> <br />
 There are more non functional pumps than functional if they were built before 1988, but the rate of functionality keeps increasing after 1988. <br />
-<img src = "./images/roc_xgb.png" width=50%> <br />
+<img src = "./images/year_function.jpeg" width=70%> <br />
+
 
 Future work for this project involve improving the quality of the data moving forward. Better data trained in our model will improve the predictions. We will also monitor the wells and update the model regularly to continuously improve our strategy.
 
