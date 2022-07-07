@@ -4,7 +4,7 @@
 
 ## Overview
 
-Tanzania is a developing country that struggles to get clean water to its population of 59 million people. The focus of this project is to build a classification model to predict the functionality of waterpoints in Tanzania given data provided by Taarifa and the Tanzanian Ministry of Water. The model was built from a dataset containing information about the source of water and status of the waterpoint (functional, functional but needs repairs, and non functional) using an iterative approach and can be found [here](./data/training_set_values.csv). The dataset contains 60,000 waterpoints in Tanzania and the following features will be used in our final model:
+Tanzania is a developing country that struggles to get clean water to its population of 59 million people. According to WHO, 1 in 6 people in Tanzania lack access to safe drinking water and 29 million don't have access to improved sanitation. The focus of this project is to build a classification model to predict the functionality of waterpoints in Tanzania given data provided by Taarifa and the Tanzanian Ministry of Water. The model was built from a dataset containing information about the source of water and status of the waterpoint (functional, functional but needs repairs, and non functional) using an iterative approach and can be found [here](./data/training_set_values.csv). The dataset contains 60,000 waterpoints in Tanzania and the following features will be used in our final model:
 
 * amount_tsh - Total static head (amount water available to waterpoint)
 * gps_height - Altitude of the well
@@ -32,7 +32,7 @@ Tanzania is a developing country that struggles to provide it's 59 million peopl
 
 ## Data Understanding
 
-The dataset used for this analysis can be found [here](./data/training_set_values.csv). The dataset used for this analysis can be found here. It contains a wealth of information about waterpoints in Tanzania and the status of their operation. The target variable has 3 different options for it's status:
+The dataset used for this analysis can be found [here](./data/training_set_values.csv).  It contains a wealth of information about waterpoints in Tanzania and the status of their operation. The target variable has 3 different options for it's status:
 
 * functional - the waterpoint is operational and there are no repairs needed
 * functional needs repair - the waterpoint is operational, but needs repairs
@@ -82,6 +82,11 @@ There are a high number of functional wells in Iringa, Shinyanga, Kilimanjaro, a
 <img src = "./images/map_function.png" width=70%> <br />
 Several of our models showed one of it's most important features to be quantity enough for the waterpoint.  There are over 8,000 waterpoints that have enough water in them but are non functional.  These are a high priority to address as well since there is water present. <br />
 <img src = "./images/quantity_function.jpeg" width=70%> <br />
+Wells with no fees are more likely to be non functional. Payment provides incentive and means to keep wells functional. <br />
+<img src = "./images/payment_function.jpeg" width=70%> <br />
+The Government, District Council, and Fini Water all have a high rate of pump failure. Investigate why these installers have such a high rate of failure or use other installers. <br />
+<img src = "./images/installer_function.jpeg" width=70%> <br />
+Future work for this project involve improving the quality of the data moving forward. Better data trained in our model will improve the predictions. We will also monitor the wells and update the model regularly to continuously improve our strategy.
 
 ## For More Information
 
