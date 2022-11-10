@@ -101,7 +101,7 @@ Future work for this project involve improving the quality of the data moving fo
 
 ## For More Information
 
-Please review my full analysis in [my Jupyter Notebook](./student.ipynb) or my [presentation](./presentation.pdf).
+Please review my full analysis in [my Jupyter Notebook](./Waterwell_status_notebook.ipynb) or my [presentation](./Waterwell_status_presentation.pdf).
 
 For any additional questions, please contact **Melody Bass @ meljoy1099@gmail.com**
 
