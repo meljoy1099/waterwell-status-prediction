@@ -47,33 +47,33 @@ We have the most functional wells at ~29,000, followed by non functional wells a
 
 ## Modeling
 
-1. Dummy Classifier Model <br />
+### Dummy Classifier Model <br />
 
 <img src = "./images/dummy_cm.png" width=40%> <br />
 Our baseline dummy model performed very poorly with an accuracy score of 46%. Our data is heavily imbalanced, which explains how our ternary model performed close to 50%.<br />
     
-2. Logistic Regression Model <br />
+### Logistic Regression Model <br />
 
 <img src = "./images/log_cm.png" width=40%> <br />
 Our logistic regression model is improved to 75% accuracy over the dummy model. This model struggled to predict wells that were functional but needed repairs, likely due to class imbalances. The precision of the functional class is 73%. <br />
     
-3. K Nearest Neighbors Model <br />
+### K Nearest Neighbors Model <br />
 
 <img src = "./images/knn_cm.png" width=40%> <br />
 The K Nearest Neighbors model outperformed the Logistic Regression model. Number of neighbors was hypertuned by running and GridSearch and optimal parameters were put into our pipe. Our K Nearest Neighbors model is not overfitting as the accuracy of training and test sets are 80.23% and 76.03%, respectively. The precision of the functional class is 77%, which is a huge improvement from our Logistic Regression model at 73%.<br />
 
-4. Decision Tree Model <br />
+### Decision Tree Model <br />
 
 <img src = "./images/dt_cm.png" width=40%> <br />
 Our decision tree model once again improved our functional class precision scores to 79%, but the model is highly overfitting with training accuracy at 89% and test accuracy at 78%.<br />
     
-5. Random Forests Model <br />
+### Random Forests Model <br />
 
 <img src = "./images/rf_cm.png" width=40%> <br />
 Upon running GridSearch with our Random Forests Pipeline, we have once again improved from our baseline accuracy to 80% precision for the functional class over the Decision Tree model at 79%. The model is still overfitting the training data, as the training accuracy is 93.5% and the test accuracy is 81.4%, but this is our best performing model so far. <br />
 <img src = "./images/roc_rf.jpeg" width=50%> <br />
     
-6. XG Boost Model <br />
+### XG Boost Model <br />
 
 <img src = "./images/xgb_cm.png" width=50%> <br />
 Our best performing model ended up being the XG Boost model with tuned hyperparameters, although the random forests model was not far behind with 80% precision for the functional wells class. The model has overfitted the training data with a training accuracy of 92.57% and test accuracy at 81.73%, but this model boasted the highest precision score for the functional wells class at 81%. <br />
