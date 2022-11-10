@@ -111,6 +111,6 @@ For any additional questions, please contact **Melody Bass @ meljoy1099@gmail.co
 ├── data                                <- Both sourced externally and generated from code
 └── images                              <- Both sourced externally and generated from code
 ├── README.md                           <- The top-level README for reviewers of this project
-├── student.ipynb                       <- Narrative documentation of analysis in Jupyter notebook
-├── presentation.pdf                    <- PDF version of project presentation
+├── Waterwell_status_notebook.ipynb     <- Narrative documentation of analysis in Jupyter notebook
+├── Waterwell_status_presentation.pdf   <- PDF version of project presentation
 ```
