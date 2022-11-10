@@ -71,20 +71,20 @@ Our decision tree model once again improved our functional class precision score
 
 <img src = "./images/rf_cm.png" width=40%> <br />
 Upon running GridSearch with our Random Forests Pipeline, we have once again improved from our baseline accuracy to 80% precision for the functional class over the Decision Tree model at 79%. The model is still overfitting the training data, as the training accuracy is 93.5% and the test accuracy is 81.4%, but this is our best performing model so far. <br />
-<img src = "./images/roc_rf.png" width=50%> <br />
+<img src = "./images/roc_rf.jpeg" width=50%> <br />
     
 6. XG Boost Model <br />
 
 <img src = "./images/xgb_cm.png" width=50%> <br />
 Our best performing model ended up being the XG Boost model with tuned hyperparameters, although the random forests model was not far behind with 80% precision for the functional wells class. The model has overfitted the training data with a training accuracy of 92.57% and test accuracy at 81.73%, but this model boasted the highest precision score for the functional wells class at 81%. <br />
-<img src = "./images/roc_xgb.png" width=50%> <br />
+<img src = "./images/roc_xgb.jpeg" width=50%> <br />
 
 ## Conclusions
 
 XG Boost was our top performing model, although Random Forests was not far behind.  The poor performance of the K Nearest Neighbors, Decision Tree, and Logistic Regression models indicate that the data is not easily separable.  Our XG Boost model performs with an 81.73% testing accuracy and precision for the functional class at 81%. It also had the highest f1 score of any model at 81% and the highest AUC scores at 90.5%.
 
 Based on my findings, I am confident to partner with the Tanzanian government to help solve their water crisis by predicting water pump failure. As we illustrated above, there is a high rate of non functional waterpoints in the southeast corner of Tanzania in Mtwara and Lindi, as well as up north in Mara, and the southwest in Rukwa. These areas need immediate attention as the situations here are critical.   <br />
-<img src = "./images/region_function.jpeg" width=70%> <br />
+<img src = "./images/region_function.jpeg" width=100%> <br />
 There are a high number of functional wells in Iringa, Shinyanga, Kilimanjaro, and Arusha. There is a cluster of functional but need repair waterpoints in Kigoma, these should be addressed to prevent failure which can be more expensive to repair. <br />
 <img src = "./images/map_function.png" width=70%> <br />
 Several of our models showed one of it's most important features to be quantity enough for the waterpoint.  There are over 8,000 waterpoints that have enough water in them but are non functional.  These are a high priority to address as well since there is water present. <br />
@@ -92,7 +92,7 @@ Several of our models showed one of it's most important features to be quantity 
 Wells with no fees are more likely to be non functional. Payment provides incentive and means to keep wells functional. <br />
 <img src = "./images/payment_function.jpeg" width=70%> <br />
 The Government, District Council, and Fini Water all have a high rate of pump failure. Investigate why these installers have such a high rate of failure or use other installers. <br />
-<img src = "./images/installer_function.jpeg" width=70%> <br />
+<img src = "./images/installer_function.jpeg" width=100%> <br />
 There are more non functional pumps than functional if they were built before 1988, but the rate of functionality keeps increasing after 1988. <br />
 <img src = "./images/year_function.jpeg" width=70%> <br />
 
