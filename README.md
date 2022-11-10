@@ -1,6 +1,8 @@
 # Tanzanian Water Wells Status Prediction
 
-**Authors**: Melody Bass
+**Author**: Melody Bass
+
+<img src = "./images/Waterwell.jpeg" width=100%> <br />
 
 ## Overview
 
@@ -106,10 +108,9 @@ For any additional questions, please contact **Melody Bass @ meljoy1099@gmail.co
 ## Repository Structure
 
 ```
+├── data                                <- Both sourced externally and generated from code
+└── images                              <- Both sourced externally and generated from code
 ├── README.md                           <- The top-level README for reviewers of this project
 ├── student.ipynb                       <- Narrative documentation of analysis in Jupyter notebook
 ├── presentation.pdf                    <- PDF version of project presentation
-├── data                                <- Both sourced externally and generated from code
-└── images                              <- Both sourced externally and generated from code
-└── code.                               <- Both sourced externally and generated from code
 ```
